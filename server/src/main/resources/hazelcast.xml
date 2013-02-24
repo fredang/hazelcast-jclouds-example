@@ -29,4 +29,6 @@
 		<eviction-policy>NONE</eviction-policy>
 	</map>
 
+	<queue name="order-queue" />
+	
 </hazelcast>

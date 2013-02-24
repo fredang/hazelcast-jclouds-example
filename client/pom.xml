@@ -5,7 +5,7 @@
 	<groupId>com.chimpler.example</groupId>
 	<artifactId>hazelcast-jclouds-example-client</artifactId>
 	<version>1.0</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<build>
 		<resources>
@@ -13,8 +13,8 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<includes>
-					<include>**/*.xml</include>
-				</includes>
+					<include>**/*.properties</include>
+				</includes>				
 			</resource>
 
 		</resources>
@@ -44,7 +44,7 @@
 					</executions>
 					<archive>
 						<manifest>
-							<mainClass>com.chimpler.example.hazelcast.ExternalClientRunner</mainClass>
+							<mainClass>com.chimpler.example.hazelcast.Client</mainClass>
 							<addClasspath>true</addClasspath>
 						</manifest>
 					</archive>

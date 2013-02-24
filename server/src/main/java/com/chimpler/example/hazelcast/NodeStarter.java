@@ -16,18 +16,17 @@
 
 package com.chimpler.example.hazelcast;
 
-import java.util.Map;
+import java.net.InetAddress;
 
 import com.hazelcast.config.ClasspathXmlConfig;
 import com.hazelcast.config.Config;
 import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
 
 public class NodeStarter {
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 		Config config = new ClasspathXmlConfig("hazelcast.xml");
-		HazelcastInstance instance = Hazelcast.newHazelcastInstance(config);
-		Map<Integer, BudgetAccount> budgetAccount = instance.getMap("budget-account");
+		config.setInstanceName(InetAddress.getLocalHost().getHostName());
+		Hazelcast.newHazelcastInstance(config);
 	}
 }

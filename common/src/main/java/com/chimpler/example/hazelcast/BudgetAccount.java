@@ -16,7 +16,9 @@
 
 package com.chimpler.example.hazelcast;
 
-public class BudgetAccount {
+import java.io.Serializable;
+
+public class BudgetAccount implements Serializable{
 	private String accountId;
 	private Double budget;
 	
