@@ -37,8 +37,7 @@ import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.core.Member;
 
-public class Client {
-
+public class AccountClient {
 	
 	public static void printHelp() {
 		System.out.println("Arguments:");
@@ -170,14 +169,16 @@ public class Client {
 		String action = args[0];
 		String accountId = null;
 		Double amount = null;
-		if (action.equals("add-money")) {
+		if (action.equals("list-accounts")
+				|| action.equals("list-members")
+				|| action.equals("listen")) {
+			// no extra argument expected
+		} else if (action.equals("add-money")) {
 			accountId = args[1]; 
 			amount = Double.parseDouble(args[2]);
 		} else if (action.equals("continuous-spend")) {
 			accountId = args[1]; 
-		} else if (!action.equals("list-accounts")
-			&& !action.equals("list-members")
-			&& !action.equals("listen")) {
+		} else {
 			System.out.println("Invalid action");
 			printHelp();
 			return;

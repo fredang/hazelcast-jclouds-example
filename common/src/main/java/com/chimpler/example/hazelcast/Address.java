@@ -16,18 +16,40 @@
 
 package com.chimpler.example.hazelcast;
 
-import java.net.InetAddress;
+import java.io.Serializable;
 
-import com.hazelcast.config.ClasspathXmlConfig;
-import com.hazelcast.config.Config;
-import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
+public class Address implements Serializable{
+	private String line;
+	private String city;
+	private String state;
+	
+	public String getLine() {
+		return line;
+	}
 
-public class NodeStarter {
+	public void setLine(String line) {
+		this.line = line;
+	}
 
-	public static void main(String args[]) throws Exception {
-		Config config = new ClasspathXmlConfig("hazelcast.xml");
-		config.setInstanceName(InetAddress.getLocalHost().getHostName());
-		HazelcastInstance instance = Hazelcast.newHazelcastInstance(config);
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	@Override
+	public String toString() {
+		return "Address [line=" + line + ", city="
+				+ city + ", state=" + state + "]";
 	}
 }

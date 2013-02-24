@@ -44,7 +44,7 @@
 					</executions>
 					<archive>
 						<manifest>
-							<mainClass>com.chimpler.example.hazelcast.Client</mainClass>
+							<mainClass>com.chimpler.example.hazelcast.AccountClient</mainClass>
 							<addClasspath>true</addClasspath>
 						</manifest>
 					</archive>
