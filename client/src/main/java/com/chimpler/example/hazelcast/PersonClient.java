@@ -194,7 +194,7 @@ public class PersonClient {
 		}
 
 		HazelcastInstance instance = initHazelcastClient();
-		IMap<String, Person> personMap = instance.getMap("budget-account");
+		IMap<String, Person> personMap = instance.getMap("person");
 		
 		try {
 			if (action.equals("add-random-data")) {
